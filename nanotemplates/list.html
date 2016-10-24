@@ -20,6 +20,7 @@
               <th>Modified</th>
 
               <th></th>
+              <th></th>
           </tr>
         </thead>
         <tbody>{% for page in pages%}
@@ -34,7 +35,7 @@
 
 
               <td><a href="{{ request.META.HTTP_NAME }}/page/{{ page.url }}"><img src="{% static 'img/newwindow.png' %}" height="16" ></a></td>
-
+              <td><a href="{% url 'nanodelete'  page.id %}">x</a></td>
           </tr>{% endfor  %}
         </tbody>
     </table>
