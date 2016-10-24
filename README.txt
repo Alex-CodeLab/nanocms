@@ -33,3 +33,8 @@ add to TEMPLATES:
 
 run migrations and collectstatic
 
+
+Now it should be possible to access the CMS using  yourdomain.com/pages/admin
+
+New page templates should be placed in the template-folder. (or linked to using ln -s )
+
