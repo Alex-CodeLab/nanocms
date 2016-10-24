@@ -9,4 +9,4 @@ tmp/*
 *~
 *.mo
 *.log
-migrations/*
+migrations/0*
