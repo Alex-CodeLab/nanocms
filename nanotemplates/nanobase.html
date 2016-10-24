@@ -1,0 +1,67 @@
+<html>
+<head>
+    <link href="https://unpkg.com/basscss@7.1.1/css/basscss.min.css" rel="stylesheet">
+
+{% block headextra %}
+{% endblock%}
+
+<style>
+    body{
+        background-color: #eee;
+    }
+    .container {
+        background-color: #fff;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="Main">
+<div class="container px2 sm-px3" style="max-width:;">
+    <main>
+        <div class="b3 p1 ">
+            <header class="py2 border-bottom">
+                <div class="sm-flex flex-center flex-wrap">
+                    <div class="flex-auto">
+                        <div class="mxn1">
+                            <a href="" title="" class="btn compact btn-link btn-small p1"></a>
+                        </div>
+                        <h1 class="m0">NanoCMS </h1>
+                    </div>
+                    <div class="mxn1">
+                        <a href="{% url 'account_logout'  %}" title="logout" target="_blank" class="btn compact btn-link p1">logout</a>
+                    </div>
+                </div>
+            </header>
+            <div class="h5 mxn1">
+                <a href="/page/admin" title="nanoCMS " class="btn compact btn-link p1">Pages</a>
+                <span class=""><span class="muted"> / </span>
+                <a href="/page/admin/snippets" title="Docs" class="btn compact btn-link p1">Snippets</a></span>
+                <span class=""><span class="muted"> / </span>
+                    <a href="/page/admin/media" title="Utility Layout" class="btn compact btn-link p1">Media</a>
+                </span>
+            </div>
+
+            {% block content %}
+
+            {% endblock %}
+
+
+        </div>
+
+
+
+
+    </main>
+
+
+</div>
+
+</div>
+
+
+</body>
+</html>
+
+

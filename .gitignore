@@ -1,0 +1,12 @@
+*.py[co]
+*.sw[po]
+*.egg*
+pip-log.txt
+.DS_Store
+.noseids
+tmp/*
+*.swp
+*~
+*.mo
+*.log
+migrations/*

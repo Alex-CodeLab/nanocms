@@ -1,0 +1,19 @@
+{% extends "nanobase.html" %}
+{% load staticfiles %}
+{% block headextra %}
+<script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+{{ form.media }}
+{% endblock%}
+
+
+{% block content %}
+
+    <div class="mb4 border p2">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-primary" type="submit"> save </button>
+        </form>
+    </div>
+{% endblock %}

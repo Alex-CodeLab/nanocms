@@ -1,0 +1,44 @@
+{% extends "nanobase.html" %}
+{% block content %}
+{% load static %}
+{% load humanize %}
+
+    <div class="mb4  p1">
+<div class="p1 ">
+    <a href="/page/admin/newpage"><button class="btn btn-primary mb1  white bg-blue">add page</button> </a>
+  <!--  <a href="/page/admin/newsnippet"><button class="btn btn-primary mb1 white  bg-teal ">add snippet </button> </a>
+-->
+</div>
+    <table class="table-light overflow-hidden bg-white border rounded">
+        <thead class="bg-darken-1">
+          <tr>
+            <th>#</th>
+              <th>url</th>
+              <th>Text</th>
+              <th>Pubished</th>
+              <th>Author</th>
+              <th>Modified</th>
+
+              <th></th>
+          </tr>
+        </thead>
+        <tbody>{% for page in pages%}
+          <tr>
+              <td><a href="{{ request.META.HTTP_NAME }}/page/admin/{{ page.id }}">{{ page.id }}</a></td>
+              <td>{{ page.url }}</td>
+              <td><a href="{{ request.META.HTTP_NAME }}/page/admin/{{ page.id }}">{{ page.content|safe|striptags|truncatechars:50 }}</a></td>
+
+              <td>{{ page.published }}</td>
+              <td>{{ page.author }}</td>
+              <td>{{ page.updated|naturaltime }}</td>
+
+
+              <td><a href="{{ request.META.HTTP_NAME }}/page/{{ page.url }}"><img src="{% static 'img/newwindow.png' %}" height="16" ></a></td>
+
+          </tr>{% endfor  %}
+        </tbody>
+    </table>
+
+</div>
+
+{%endblock%}
