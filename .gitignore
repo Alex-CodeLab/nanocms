@@ -10,3 +10,6 @@ tmp/*
 *.mo
 *.log
 migrations/0*
+templates/*
+!templates/example1.html
+!templates/example2.html
