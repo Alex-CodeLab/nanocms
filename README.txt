@@ -21,8 +21,15 @@ CKEDITOR_CONFIGS = {
 
 install nanocms
 
+add to urls:
+
+    url(r'^page/',include('nanocms.urls')),
+
+
 add to TEMPLATES:
   os.path.join(PROJECT_ROOT, 'nanocms/nanotemplates'),
 
-
 (if not already) add django.contrib.humanize to installed_apps
+
+run migrations and collectstatic
+
