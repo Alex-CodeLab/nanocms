@@ -5,7 +5,6 @@ from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
 
 
-
 import sys, os
 # Create your models here.
 
@@ -28,7 +27,6 @@ class Page(models.Model):
     author   = models.ForeignKey(User,null=True)
     createdate  = models.DateTimeField(auto_now_add=True, auto_now=False, null=True)
     updated     = models.DateTimeField(auto_now_add=False, auto_now=True, null=True)
-
 
     def __str__(self):
         return str(self.title)

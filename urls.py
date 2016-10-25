@@ -1,4 +1,4 @@
-from django.conf.urls import url, include
+from django.conf.urls import url
 from nanocms.views import page,  nanoadmin, NanoEdit, NanoNew, NanoDelete
 from django.contrib.auth.decorators import login_required
 

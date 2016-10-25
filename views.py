@@ -1,20 +1,20 @@
 from django.shortcuts import render
 from models import Page
-from django.http import HttpResponseNotFound , HttpResponseForbidden
+from django.http import HttpResponseForbidden
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from django.views.generic.edit import UpdateView
 from django.views.generic.edit import CreateView
 from django.views.generic.edit import DeleteView
 from forms import PageForm
+from django.http import Http404
 # Create your views here.
 
 def page(request,permalink):
     context = {}
-    permalink
     context['link'] = permalink
     try:
-        page = Page.objects.filter(url=permalink)[0]
+        page = Page.objects.filter(url=permalink).first()
         if page.published:
             context['content'] = page.content
             context['title'] = page.title
@@ -23,9 +23,9 @@ def page(request,permalink):
             else:
                 return HttpResponseForbidden('<h1>Sorry, no access.</h1>')
         else:
-            return HttpResponseNotFound('<h1>Page not found</h1>')
+            raise Http404
     except:
-        return HttpResponseNotFound('<h1>Page not found</h1>')
+        raise Http404
 
 
 @login_required
