@@ -1,5 +1,5 @@
 from django import forms
-from models import Page
+from .models import Page
 from django.contrib.auth.models import User
 from ckeditor.widgets import CKEditorWidget
 

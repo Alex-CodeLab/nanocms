@@ -1,12 +1,12 @@
 from django.shortcuts import render
-from models import Page
+from .models import Page
 from django.http import HttpResponseForbidden
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from django.views.generic.edit import UpdateView
 from django.views.generic.edit import CreateView
 from django.views.generic.edit import DeleteView
-from forms import PageForm
+from .forms import PageForm
 from django.http import Http404
 # Create your views here.
 
