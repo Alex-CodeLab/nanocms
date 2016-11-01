@@ -19,19 +19,24 @@ CKEDITOR_CONFIGS = {
 }
 
 
-install nanocms
+install nanocms:
+
+ git clone https://github.com/allox/nanocms.git
 
 add to urls:
 
     url(r'^page/',include('nanocms.urls')),
 
+add to installed apps:
+  'nanocms'
 
 add to TEMPLATES:
   os.path.join(PROJECT_ROOT, 'nanocms/nanotemplates'),
 
+
 (if not already) add django.contrib.humanize to installed_apps
 
-run migrations and collectstatic
+ run migrations and collectstatic
 
 
 Now it should be possible to access the CMS using  yourdomain.com/pages/admin
