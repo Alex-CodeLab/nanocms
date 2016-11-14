@@ -35,11 +35,16 @@
 
 
               <td><a href="{{ request.META.HTTP_NAME }}/page/{{ page.url }}"><img src="{% static 'img/newwindow.png' %}" height="16" ></a></td>
-              <td><a href="{% url 'nanodelete'  page.id %}">x</a></td>
+              <td><a href="{% url 'nanodelete'  page.id %}" class="confirmation"><i class="fa fa-times-circle" aria-hidden="true"></i></a></td>
           </tr>{% endfor  %}
         </tbody>
     </table>
 
 </div>
 
+<script type="text/javascript">
+    $('.confirmation').on('click', function () {
+        return confirm('This will delete the page.');
+    });
+</script>
 {%endblock%}
